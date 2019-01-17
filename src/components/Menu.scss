@@ -1,0 +1,7 @@
+.Menu {
+    @include removeChildrenMargins(both);
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+}

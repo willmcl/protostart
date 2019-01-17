@@ -1,0 +1,102 @@
+// --------------------------- Typographic Styles
+
+html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // Set rems
+    font-size: 56.25%; // 1rem = 9px
+    @include breakpoint( sm ) {
+        font-size: 56.25%; // 1rem = 9px
+    }
+    @include breakpoint( md ) {
+        font-size: 62.5%; // 1rem = 10px
+    }
+    @include breakpoint( lg ) {
+        font-size: 62.5%; // 1rem = 10px
+    }
+}
+
+body {
+    margin: 0;
+
+    // Use system fonts: https://css-tricks.com/snippets/css/system-font-stack/
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: $black;
+    background-color: $white;
+}
+
+h1, h2, h3, h4, h5, h6,
+p,
+ol, ul, li,
+code, kbd, pre, samp {
+    line-height: 1.5;
+    margin-top: $spacer-1;
+    margin-bottom: $spacer-1;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+    a { text-decoration: none; }
+    a:hover { text-decoration: none; }
+}
+
+h1 { @include type-styles( 5 ); }
+h2 { @include type-styles( 4 ); }
+h3 { @include type-styles( 3 ); }
+h4 { @include type-styles( 2 ); }
+h5 { @include type-styles( 1 ); }
+h6 { @include type-styles( 0 ); }
+p, ul, ol, blockquote { @include type-styles( 0 ); }
+
+li {
+    @include type-styles( 0 );
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+small {  @include type-styles( -1 ); }
+
+code, kbd, pre, samp {
+    font-family: monospace;
+    @include type-styles( 0 );
+    white-space: normal;
+}
+
+pre { @include type-styles( 0 ); }
+
+ul {
+    padding-left: 4rem;
+    list-style-type: disc;
+}
+
+ol {
+    padding-left: 4rem;
+    list-style-type: decimal;
+}
+
+em, i { font-style: italic; }
+
+strong, b { font-weight: bold; }
+
+blockquote {
+    font-weight: bold;
+    padding-left: 4rem;
+}
+
+a { color: $link; }
+a:visited { color: $visited; }
+a:hover { color: $link; }
+a:active,
+a:focus {
+    color: $focus;
+    outline: 1px dotted $focus;
+}
+
+sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    top: -0.4em;
+}
+
+sub { top: 0.4em; }

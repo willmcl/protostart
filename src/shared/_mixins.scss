@@ -1,0 +1,79 @@
+
+// Breakpoints
+
+@mixin breakpoint( $size ) {
+    @if $size == sm {
+        @media only screen and (min-width: $break-sm) { @content; }
+    } @else if $size == md {
+        @media only screen and (min-width: $break-md) { @content; }
+    } @else if $size == lg {
+        @media only screen and (min-width: $break-lg) { @content; }
+    } @else if $size == xl {
+        @media only screen and (min-width: $break-xl) { @content; }
+    }
+}
+
+// Exponent function
+
+@function pow($number, $exponent) {
+    $value: 1;
+
+    @if $exponent > 0 {
+        @for $i from 1 through $exponent {
+            $value: $value * $number;
+        }
+    } @else if $exponent < 0 {
+        @for $i from 1 through -$exponent {
+            $value: $value / $number;
+        }
+    }
+
+    @return $value;
+}
+
+// Type styles
+
+@mixin type-styles( $exponent ) {
+    font-size: $type-base * pow( $scale-xs, $exponent );
+    @include breakpoint( sm ) {
+        font-size: $type-base * pow( $scale-sm, $exponent );
+    }
+    @include breakpoint( md ) {
+        font-size: $type-base * pow( $scale-md, $exponent );
+    }
+    @include breakpoint( lg ) {
+        font-size: $type-base * pow( $scale-lg, $exponent );
+    }
+}
+
+@mixin removeChildrenMargins( $children ) {
+    @if $children == both {
+        > :first-child {
+            margin-top: 0;
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+        > :last-child {
+            margin-bottom: 0;
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    } @else if $children == first {
+        > :first-child {
+            margin-top: 0;
+            > :first-child {
+                margin-top: 0;
+            }
+        }
+    } @else if $children == last {
+        > :last-child {
+            margin-bottom: 0;
+            > :last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
