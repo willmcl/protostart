@@ -10,6 +10,9 @@
 @import 'elements/_e-icons.scss';
 @import 'elements/_e-typography.scss';
 
+.Content {
+    @include removeChildrenMargins(both);
+}
+
 // Components
-@import 'components/Content.scss';
 @import 'components/Menu.scss';
