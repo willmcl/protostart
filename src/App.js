@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
-import Menu from './components/Menu.js';
+import Sidebar from './components/Sidebar.js';
 import Content from './components/Content.js';
 
 class App extends Component {
@@ -9,7 +9,21 @@ class App extends Component {
         super(props);
         this.state = {
             loggedIn: false,
+            userEmail: '',
         };
+        this.handleLoginChange = this.handleLoginChange.bind( this );
+    }
+
+    handleLoginChange(loggedIn, email) {
+        if( loggedIn ) {
+            this.setState( {
+                loggedIn: true,
+            } )
+        } else {
+            this.setState( {
+                loggedIn: false,
+            } )
+        }
     }
 
     render() {
@@ -17,8 +31,8 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <div className="AppContainer">
-                        <Menu/>
-                        <Content/>
+                        <Sidebar loggedIn={this.state.loggedIn}/>
+                        <Content onLoginChange={this.handleLoginChange} loggedIn={this.state.loggedIn}/>
                     </div>
                 </Router>
             </div>
