@@ -10,9 +10,12 @@
 @import 'elements/_e-icons.scss';
 @import 'elements/_e-typography.scss';
 
-.Content {
-    @include removeChildrenMargins(both);
+
+.AppContainer {
+    display: grid;
+    grid-template-columns: 150px auto;
 }
 
 // Components
 @import 'components/Menu.scss';
+@import 'components/Content.scss';

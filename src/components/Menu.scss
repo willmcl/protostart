@@ -1,4 +1,5 @@
 .Menu {
+    padding: $spacer-1;
     @include removeChildrenMargins(both);
     ul {
         list-style: none;

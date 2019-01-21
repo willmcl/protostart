@@ -1,0 +1,4 @@
+.Content {
+    padding: $spacer-1;
+    @include removeChildrenMargins(both);
+}
