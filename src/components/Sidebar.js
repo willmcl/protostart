@@ -5,7 +5,7 @@ class Sidebar extends Component {
     render() {
         return (
             <div className="Sidebar">
-                <Menu loggedIn={this.props.loggedIn} />
+                <Menu />
                 <p>&copy; 2019 Will.</p>
             </div>
         )

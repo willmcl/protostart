@@ -1,41 +1,53 @@
 import React, { Component } from 'react';
 import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import Sidebar from './components/Sidebar.js';
 import Content from './components/Content.js';
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            loggedIn: false,
-            userEmail: '',
-        };
-        this.handleLoginChange = this.handleLoginChange.bind( this );
-    }
 
-    handleLoginChange(loggedIn, email) {
-        if( loggedIn ) {
-            this.setState( {
-                loggedIn: true,
-            } )
-        } else {
-            this.setState( {
-                loggedIn: false,
-            } )
-        }
+// Create a reducer function to tell Redux what our state should look like.
+const initialState = {
+    loggedIn: false
+};
+
+function reducer(state = initialState, action) {
+    switch(action.type) {
+        case 'LOGOUT':
+            return {
+                loggedIn: false
+            };
+        case 'LOGIN':
+            return {
+                loggedIn: true
+            };
+        default:
+            return state;
     }
+}
+
+
+// Use createStore function to create a store, and passed it the reducer.
+const store = createStore(reducer);
+
+class App extends Component {
 
     render() {
         return (
-            <div className="App">
-                <Router>
-                    <div className="AppContainer">
-                        <Sidebar loggedIn={this.state.loggedIn}/>
-                        <Content onLoginChange={this.handleLoginChange} loggedIn={this.state.loggedIn}/>
-                    </div>
-                </Router>
-            </div>
+
+            // Wrap our whole app in the Provider component that comes with react-redux,
+            // and pass it our store as a prop.
+            <Provider store={store}>
+                <div className="App">
+                    <Router>
+                        <div className="AppContainer">
+                            <Sidebar/>
+                            <Content/>
+                        </div>
+                    </Router>
+                </div>
+            </Provider>
         );
     }
 }
