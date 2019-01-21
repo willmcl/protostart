@@ -5,6 +5,13 @@ import Menu from './components/Menu.js';
 import Content from './components/Content.js';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            loggedIn: false,
+        };
+    }
+
     render() {
         return (
             <div className="App">

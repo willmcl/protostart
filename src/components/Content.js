@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Home.js';
 import About from './About.js';
-import Form from './Form.js';
+import Login from './Login.js';
 
 class Content extends Component {
     render() {
@@ -10,7 +10,7 @@ class Content extends Component {
             <main className="Content">
                 <Route exact path="/" component={Home}/>
                 <Route path="/about" component={About}/>
-                <Route path="/form" component={Form}/>
+                <Route path="/login" component={Login}/>
             </main>
         )
     }

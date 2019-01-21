@@ -20,9 +20,12 @@ input[type="time"],
 input[type="url"],
 input[type="week"],
 textarea {
+    display: block;
     font-family:inherit;
     @include type-styles( 0 );
     padding: 0.4rem 1rem;
+    margin-top: $spacer-1;
+    margin-bottom: $spacer-1;
     border: 1px $grey2 solid;
     border-radius: 2px;
     line-height: 1.6;
@@ -48,9 +51,11 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-    display: inline-block;
+    display: block;
 
     padding: 0 $spacer-1;
+    margin-top: $spacer-1;
+    margin-bottom: $spacer-1;
 
     font-family:inherit;
     @include type-styles( 0 );
@@ -78,4 +83,8 @@ input[type="reset"] {
         text-decoration: none;
         color: inherit;
     }
+}
+
+.errorMsg {
+    color: $error;
 }
