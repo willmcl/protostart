@@ -29,7 +29,7 @@ function reducer(state = initialState, action) {
 
 
 // Use createStore function to create a store, and passed it the reducer.
-const store = createStore(reducer);
+export const store = createStore(reducer);
 
 class App extends Component {
 
