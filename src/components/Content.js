@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Home from './Home.js';
-import Dashboard from './Dashboard.js';
-import Login from './Login.js';
+import Home from './Home';
+import Dashboard from './Dashboard';
+import LoginForm from './LoginForm';
 
 class Content extends Component {
     render() {
@@ -10,7 +10,7 @@ class Content extends Component {
             <main className="Content">
                 <Route exact path="/" component={Home}/>
                 <Route path="/dashboard" component={Dashboard}/>
-                <Route path="/login" component={Login}/>
+                <Route path="/login" component={LoginForm}/>
             </main>
         )
     }

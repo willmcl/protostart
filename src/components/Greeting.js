@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogOutLink from './LogOutLink';
+import LogoutLink from './LogoutLink';
 import { Link } from "react-router-dom";
 
 class Greeting extends Component {
@@ -10,7 +10,7 @@ class Greeting extends Component {
             return (
                 <div className="Greeting">
                     <p>Welcome back {this.props.userEmail}</p>
-                    <LogOutLink/>
+                    <LogoutLink/>
                 </div>
             )
         } else {

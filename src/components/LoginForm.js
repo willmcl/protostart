@@ -12,7 +12,7 @@ const LoginSchema = Yup.object().shape({
     .required('Required'),
 });
 
-class Login extends Component {
+class LoginForm extends Component {
 
     login = (values) => {
         this.props.dispatch({
@@ -35,7 +35,7 @@ class Login extends Component {
                         setTimeout(() => {
                             this.login(values);
                             actions.setSubmitting(false);
-                        }, 1000);
+                        }, 100);
                     }}
                     render={props => (
                         <Form>
@@ -65,4 +65,4 @@ function mapStateToProps(state) {
 
 // Connect the Redux store to our component with the connect function from react-redux,
 // using the mapStateToProps function to configure how the connection works.
-export default connect(mapStateToProps)(Login);
+export default connect(mapStateToProps)(LoginForm);

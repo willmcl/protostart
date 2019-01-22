@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class LogOutLink extends Component {
+class LogoutLink extends Component {
 
     logout = () => {
         this.props.dispatch({ type: 'LOGOUT' });
@@ -9,7 +9,7 @@ class LogOutLink extends Component {
 
     render() {
         return (
-            <button className="LogOutLink" onClick={this.logout}>Logout</button>
+            <button className="LogoutLink" onClick={this.logout}>Logout</button>
         )
 
     }
@@ -21,4 +21,4 @@ function mapStateToProps(state) {
     };
 }
 
-export default connect(mapStateToProps)(LogOutLink);
+export default connect(mapStateToProps)(LogoutLink);

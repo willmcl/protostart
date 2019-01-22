@@ -1,0 +1,11 @@
+.LogoutLink {
+    padding: 0;
+    display: inline;
+    margin: 0;
+    border: none;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {
+        text-decoration: underline;
+    }
+}
