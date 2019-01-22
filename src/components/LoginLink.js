@@ -8,20 +8,16 @@ class LoginLink extends Component {
         this.props.dispatch({ type: 'LOGOUT' });
     };
 
-    login = () => {
-        this.props.dispatch({ type: 'LOGIN' });
-    };
-
     render() {
         const isLoggedIn = this.props.loggedIn;
         console.log(isLoggedIn);
         if (isLoggedIn) {
             return (
-                <li onClick={this.logout}>Logout</li>
+                <li><button onClick={this.logout}>Logout</button></li>
             )
         } else {
             return (
-                <li onClick={this.login}>Login</li>
+                <li><Link to="/login">Login</Link></li>
             )
         }
 
