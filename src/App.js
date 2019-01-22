@@ -9,18 +9,21 @@ import Content from './components/Content.js';
 
 // Create a reducer function to tell Redux what our state should look like.
 const initialState = {
-    loggedIn: false
+    loggedIn: false,
+    userEmail: ''
 };
 
 function reducer(state = initialState, action) {
     switch(action.type) {
         case 'LOGOUT':
             return {
-                loggedIn: false
+                loggedIn: false,
+                userEmail: 'none'
             };
         case 'LOGIN':
             return {
-                loggedIn: true
+                loggedIn: true,
+                userEmail: action.email
             };
         default:
             return state;

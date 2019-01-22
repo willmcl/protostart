@@ -51,11 +51,9 @@ button,
 input[type="submit"],
 input[type="button"],
 input[type="reset"] {
-    display: block;
+    display: inline-block;
 
     padding: 0 $spacer-1;
-    margin-top: $spacer-1;
-    margin-bottom: $spacer-1;
 
     font-family:inherit;
     @include type-styles( 0 );

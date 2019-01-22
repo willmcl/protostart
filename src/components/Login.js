@@ -14,8 +14,11 @@ const LoginSchema = Yup.object().shape({
 
 class Login extends Component {
 
-    login = () => {
-        this.props.dispatch({ type: 'LOGIN' });
+    login = (values) => {
+        this.props.dispatch({
+            type: 'LOGIN',
+            email: values.email
+        });
     };
 
     render() {
@@ -28,23 +31,22 @@ class Login extends Component {
                         password: ''
                     }}
                     validationSchema={LoginSchema}
-                    onSubmit={(values, { setSubmitting }) => {
-                        this.login();
-                        setSubmitting(false);
+                    onSubmit={(values, actions) => {
+                        setTimeout(() => {
+                            this.login(values);
+                            actions.setSubmitting(false);
+                        }, 1000);
                     }}
-                >
-                    {({ isSubmitting }) => (
+                    render={props => (
                         <Form>
                             <Field type="email" name="email"/>
                             <ErrorMessage className="errorMsg" name="email" component="div"/>
                             <Field type="password" name="password"/>
                             <ErrorMessage className="errorMsg" name="password" component="div"/>
-                            <button type="submit" disabled={isSubmitting}>
-                                Submit
-                            </button>
+                            <button type="submit">Submit</button>
                         </Form>
                     )}
-                </Formik>
+                />
             </div>
         )
     }
@@ -56,7 +58,7 @@ function mapStateToProps(state) {
     // The object you return from mapStateToProps gets fed into your component as props.
     // The example below will pass state.loggedIn as the value of the loggedIn prop
     return {
-        loggedIn: state.loggedIn
+        userEmail: state.userEmail
     };
 }
 

@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import LogOutLink from './LogOutLink';
+import { Link } from "react-router-dom";
 
 class Greeting extends Component {
     render() {
         const isLoggedIn = this.props.loggedIn;
         if (isLoggedIn) {
             return (
-                <p>Welcome back user!</p>
+                <div className="Greeting">
+                    <p>Welcome back {this.props.userEmail}</p>
+                    <LogOutLink/>
+                </div>
             )
         } else {
             return (
-                <p>Nice to meet you guest!</p>
+                <div className="Greeting">
+                    <Link className="button" to="/login">Log in</Link>
+                </div>
             )
         }
 
@@ -19,7 +26,8 @@ class Greeting extends Component {
 
 function mapStateToProps(state) {
     return {
-        loggedIn: state.loggedIn
+        loggedIn: state.loggedIn,
+        userEmail: state.userEmail,
     };
 }
 

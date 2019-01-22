@@ -1,19 +1,17 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import LoginLink from './LoginLink.js';
 
-class Menu extends Component {
+class PageMenu extends Component {
     render() {
         return (
-            <nav className="Menu">
+            <nav className="PageMenu">
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/about">About</Link></li>
-                    <LoginLink />
+                    <li><Link to="/dashboard">Dashboard</Link></li>
                 </ul>
             </nav>
         )
     }
 }
 
-export default Menu
+export default PageMenu

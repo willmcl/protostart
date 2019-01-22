@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import Menu from './Menu.js';
+import PageMenu from './PageMenu.js';
 import Greeting from './Greeting.js';
 
 class Sidebar extends Component {
     render() {
         return (
             <div className="Sidebar">
-                <Menu />
+                <PageMenu />
                 <Greeting />
                 <p>&copy; 2019 Will.</p>
             </div>
