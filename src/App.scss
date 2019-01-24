@@ -5,19 +5,26 @@
 @import 'shared/_spacers.scss';
 @import 'shared/_typography.scss';
 
-// Elements
-@import 'elements/_e-forms.scss';
-@import 'elements/_e-icons.scss';
-@import 'elements/_e-typography.scss';
+// Atoms
+@import 'atoms/Forms.scss';
+@import 'atoms/IconMenu.scss';
+@import 'atoms/Icons.scss';
+@import 'atoms/Typography.scss';
+@import 'atoms/Logo';
+@import 'atoms/LogoutLink';
 
+// Molecules
+@import 'molecules/Footer.scss';
+@import 'molecules/Greeting.scss';
+@import 'molecules/Header.scss';
+@import 'molecules/PageMenu.scss';
 
+// Organisms
+@import 'organisms/Content';
+@import 'organisms/Sidebar';
+
+// Templates
 .AppContainer {
     display: grid;
-    grid-template-columns: 150px auto;
+    grid-template-columns: 200px auto;
 }
-
-// Components
-@import 'components/Content.scss';
-@import 'components/LogoutLink.scss';
-@import 'components/PageMenu.scss';
-@import 'components/Sidebar.scss';

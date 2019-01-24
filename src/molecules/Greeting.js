@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import LogoutLink from './LogoutLink';
+import LogoutLink from '../atoms/LogoutLink';
 import { Link } from "react-router-dom";
 
 class Greeting extends Component {
@@ -9,8 +9,11 @@ class Greeting extends Component {
         if (isLoggedIn) {
             return (
                 <div className="Greeting">
-                    <p>Welcome back {this.props.userEmail}</p>
-                    <LogoutLink/>
+                    <p>
+                        <small>{this.props.userEmail} |
+                            <LogoutLink/>
+                        </small>
+                    </p>
                 </div>
             )
         } else {

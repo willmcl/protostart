@@ -3,8 +3,10 @@ import './App.scss';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
-import Sidebar from './components/Sidebar.js';
-import Content from './components/Content.js';
+import Sidebar from './organisms/Sidebar';
+import Content from './organisms/Content';
+import Header from "./molecules/Header";
+import Footer from "./molecules/Footer";
 
 
 // Create a reducer function to tell Redux what our state should look like.
@@ -45,8 +47,10 @@ class App extends Component {
                 <div className="App">
                     <Router>
                         <div className="AppContainer">
+                            <Header/>
                             <Sidebar/>
                             <Content/>
+                            <Footer/>
                         </div>
                     </Router>
                 </div>

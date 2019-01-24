@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Home from './Home';
 import Dashboard from './Dashboard';
-import LoginForm from './LoginForm';
+import LoginForm from '../molecules/LoginForm';
 
 class Content extends Component {
     render() {
