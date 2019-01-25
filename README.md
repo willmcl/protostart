@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+In addition we have added:
+- Redux and React Redux
+- Node Sass
+- React Router
+- Formik
+- Yup
+
 ## Available Scripts
 
 In the project directory, you can run:
