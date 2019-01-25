@@ -7,6 +7,7 @@ import Sidebar from './organisms/Sidebar';
 import Content from './organisms/Content';
 import Header from "./molecules/Header";
 import Footer from "./molecules/Footer";
+import Main from "./organisms/Main";
 
 
 // Create a reducer function to tell Redux what our state should look like.
@@ -48,8 +49,7 @@ class App extends Component {
                     <Router>
                         <div className="AppContainer">
                             <Header/>
-                            <Sidebar/>
-                            <Content/>
+                            <Main/>
                             <Footer/>
                         </div>
                     </Router>

@@ -1,0 +1,27 @@
+.Main {
+    width: 100%;
+    overflow-x: hidden;
+    .MainInner {
+        display: flex;
+        width: calc(100vw + #{$sidebar-width});
+        margin-left: -$sidebar-width;
+        transition: margin-left 0.25s ease-in-out;
+        @include breakpoint($sidebar-break) {
+            margin-left: 0;
+            width: 100vw;
+        }
+    }
+    &.Sidebar-is-open {
+        .MainInner {
+            margin-left: 0;
+            .Content {
+                .ContentOverlay {
+                    display: block;
+                    @include breakpoint($sidebar-break) {
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+}

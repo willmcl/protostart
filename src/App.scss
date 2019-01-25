@@ -1,9 +1,10 @@
 // Shared
-@import 'shared/_breakpoints.scss';
-@import 'shared/_colors.scss';
-@import 'shared/_mixins.scss';
-@import 'shared/_spacers.scss';
-@import 'shared/_typography.scss';
+@import 'shared/Breakpoints.scss';
+@import 'shared/Colors.scss';
+@import 'shared/Sidebar.scss';
+@import 'shared/Mixins.scss';
+@import 'shared/Spacers.scss';
+@import 'shared/Typography.scss';
 
 // Atoms
 @import 'atoms/Forms.scss';
@@ -22,9 +23,6 @@
 // Organisms
 @import 'organisms/Content';
 @import 'organisms/Sidebar';
+@import 'organisms/Main';
 
 // Templates
-.AppContainer {
-    display: grid;
-    grid-template-columns: 200px auto;
-}
