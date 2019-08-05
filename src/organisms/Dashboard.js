@@ -4,24 +4,24 @@ import LoginForm from '../molecules/LoginForm';
 import DashboardContent from './DashboardContent';
 
 class Dashboard extends Component {
-    render() {
-        if(this.props.loggedIn) {
-            return (
-                <DashboardContent/>
-            )
-        } else {
-            return (
-                <LoginForm/>
-            )
-        }
-
+  render() {
+    if ( this.props.loggedIn ) {
+      return (
+        <DashboardContent/>
+      )
+    } else {
+      return (
+        <LoginForm/>
+      )
     }
+
+  }
 }
 
-function mapStateToProps(state) {
-    return {
-        loggedIn: state.loggedIn,
-    };
+function mapStateToProps( state ) {
+  return {
+    loggedIn: state.login.loggedIn,
+  };
 }
 
-export default connect(mapStateToProps)(Dashboard);
+export default connect( mapStateToProps )( Dashboard );

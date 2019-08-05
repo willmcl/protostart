@@ -1,6 +1,0 @@
-.Icon.IconMenu {
-    margin-right: $spacer-1;
-    @include breakpoint($sidebar-break) {
-        display: none;
-    }
-}
