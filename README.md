@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In addition we have added:
 - Redux and React Redux
-- Node Sass
+- Styled Components
 - React Router
 - Formik
 - Yup
