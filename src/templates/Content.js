@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import Home from './Home';
-import Dashboard from './Dashboard';
-import LoginForm from '../molecules/LoginForm';
+import Home from '../pages/Home';
+import Dashboard from '../pages/Dashboard';
 import styled from 'styled-components';
 
 const Holder = styled.main`
@@ -23,7 +22,6 @@ class Content extends Component {
       <Holder>
         <Route exact path="/" component={Home}/>
         <Route path="/dashboard" component={Dashboard}/>
-        <Route path="/login" component={LoginForm}/>
       </Holder>
     )
   }

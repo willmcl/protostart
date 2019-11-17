@@ -3,13 +3,13 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import Header from './molecules/Header';
 import Footer from './molecules/Footer';
-import Main from './organisms/Main';
 
 import GlobalStyles from './atoms/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './utils/styling';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './utils/configureStore';
+import Content from './templates/Content';
 
 class App extends Component {
 
@@ -26,7 +26,7 @@ class App extends Component {
             <Router>
               <div className="AppContainer">
                 <Header/>
-                <Main/>
+                <Content/>
                 <Footer/>
               </div>
             </Router>

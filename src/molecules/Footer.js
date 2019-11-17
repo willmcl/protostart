@@ -13,7 +13,7 @@ class Footer extends Component {
     return (
       <Holder>
         <p>
-          <small>&copy; 2019 Will.</small>
+          <small>&copy; 2019 </small>
         </p>
       </Holder>
     )

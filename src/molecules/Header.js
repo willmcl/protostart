@@ -1,23 +1,21 @@
 import React, { Component } from 'react';
-import Logo from '../atoms/Logo';
-import IconMenu from '../atoms/IconMenu';
-import Greeting from './Greeting';
 import styled from 'styled-components';
+import PageMenu from './PageMenu';
+import Logo from '../atoms/Logo';
 
 const Holder = styled.header`
   border-bottom: 1px solid ${props => props.theme.colours.grey};
   padding: 1rem 2rem;
-  display: flex;
-  align-items: center;
+  p { margin: 0; }
 `;
 
 class Header extends Component {
   render() {
     return (
       <Holder>
-        <IconMenu/>
         <Logo/>
-        <Greeting/>
+        <p><small>Header</small></p>
+        <PageMenu/>
       </Holder>
     )
   }

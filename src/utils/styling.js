@@ -25,7 +25,6 @@ export const theme = {
       lg: 1.125,
     }
   },
-  sidebarWidth: '15rem',
   typeStyles: ( exp ) => {
     return `font-size: ${theme.typography.base * Math.pow( theme.typography.scale.xs, exp )}rem;
     @media ( ${theme.breakpoints.sm} ) {

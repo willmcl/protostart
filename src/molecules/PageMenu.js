@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { connect } from 'react-redux';
 
 const Menu = styled.nav`
   padding-bottom: 2rem;
@@ -15,12 +14,6 @@ const Menu = styled.nav`
 `;
 
 class PageMenu extends Component {
-  handleClick = () => {
-    this.props.dispatch({
-      type: 'TOGGLE_MENU',
-      open: !this.props.menuOpen
-    });
-  };
 
   render() {
     return (
@@ -34,10 +27,4 @@ class PageMenu extends Component {
   }
 }
 
-function mapStateToProps( state ) {
-  return {
-    menuOpen: state.menu.open
-  };
-}
-
-export default connect( mapStateToProps )( PageMenu );
+export default PageMenu;
