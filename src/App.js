@@ -8,13 +8,8 @@ import Main from './organisms/Main';
 import GlobalStyles from './atoms/GlobalStyles';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './utils/styling';
-import { createStore } from 'redux';
-import reducer from './reducers/index';
-
-const store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+import { PersistGate } from 'redux-persist/integration/react';
+import { store, persistor } from './utils/configureStore';
 
 class App extends Component {
 
@@ -24,7 +19,8 @@ class App extends Component {
       // Wrap our whole app in the Provider component that comes with react-redux,
       // and pass it our store as a prop.
       <Provider store={store}>
-        <ThemeProvider theme={theme}>
+        <PersistGate loading={null} persistor={persistor}>
+          <ThemeProvider theme={theme}>
           <div className="App">
             <GlobalStyles/>
             <Router>
@@ -35,7 +31,8 @@ class App extends Component {
               </div>
             </Router>
           </div>
-        </ThemeProvider>
+          </ThemeProvider>
+        </PersistGate>
       </Provider>
     );
   }
