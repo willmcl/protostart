@@ -27,7 +27,6 @@ class App extends Component {
               <div className="AppContainer">
                 <Header/>
                 <Content/>
-                <Footer/>
               </div>
             </Router>
           </div>
